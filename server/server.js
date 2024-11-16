@@ -13,7 +13,6 @@ const carRoutes = require('./routes/car');   // for car management
 const imageRoutes = require('./routes/image'); // for image management
 
 dotenv.config();
-
 const app = express();
 app.use(express.json());
 app.use(cors());
