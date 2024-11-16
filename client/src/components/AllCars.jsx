@@ -120,6 +120,7 @@ const AllCars = () => {
                                                 src={imageUrl}
                                                 alt={index + 1}
                                                 style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                                                loading="lazy"
                                             />
                                         </div>
                                     ))}
