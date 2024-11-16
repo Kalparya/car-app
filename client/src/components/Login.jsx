@@ -35,12 +35,7 @@ const Login = () => {
                 // Store token in localStorage
                 localStorage.setItem("authToken", response.data.token);
                 localStorage.setItem("user", JSON.stringify(response.data.user));
-                // Show SweetAlert2 success message
-                Swal.fire({
-                    icon: "success",
-                    title: "Login Successful",
-                    text: "Redirecting you to the homepage...",
-                });
+
                 navigate("/");
             }
         } catch (error) {

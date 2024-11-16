@@ -27,7 +27,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchCarDetail = async () => {
       try {
-        const response = await axios.get(`http://localhost:9000/cars/${passedCarId}`, {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/cars/${passedCarId}`, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': localStorage.getItem('authToken')
@@ -52,7 +52,7 @@ const ProductDetail = () => {
       const imageUrls = await Promise.all(
         images.map(async (imageId) => {
           try {
-            const imageResponse = await axios.get(`http://localhost:9000/get-image/${imageId}`, {
+            const imageResponse = await axios.get(`${process.env.REACT_APP_API_URL}/get-image/${imageId}`, {
               headers: {
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('authToken')
