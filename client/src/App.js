@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+import ProductCreationPage from "./components/ProductCreationPage";
+import ProductDetailPage from "./components/ProductDetailPage";
+import HomePage from "./components/HomePage";
+import './App.css'
 
-function App() {
+const App = () => {
+  const user = localStorage.getItem('user');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {
+          user ? (
+            <Route path="/" element={<HomePage />} />
+          ) : (
+            <Route path="/" element={<Login />} />
+          )
+        }
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/create-product" element={<ProductCreationPage />} />
+        <Route path="/product/:id" element={<ProductDetailPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

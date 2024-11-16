@@ -85,7 +85,7 @@ exports.getCars = async (req, res) => {
 // Get a specific car by ID
 exports.getCarById = async (req, res) => {
     try {
-        const car = await Car.findOne({ _id: req.params.id }).populate('images');
+        const car = await Car.findOne({ _id: req.params.id });
         if (!car) return res.status(404).json({ message: 'Car not found' });
         res.json(car);
     } catch (error) {
