@@ -6,6 +6,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Navbar from './Navbar';
 import { Modal } from 'react-bootstrap';  // Import Modal and Button from react-bootstrap
 import Swal from 'sweetalert2';
+import loadingif from './loading.gif';
 const ProductDetail = () => {
   const { carId } = useParams();
   const location = useLocation();
@@ -155,7 +156,11 @@ const ProductDetail = () => {
     }
   };
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <>
+    <div className='d-flex justify-content-center align-items-center mt-5'>
+      <img src={loadingif} style={{height:'100px', width:'100px'}} alt="" />
+    </div>
+  </>;
 
   return (
     <div className="container">

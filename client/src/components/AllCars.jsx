@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Carousel } from 'react-responsive-carousel';
 import { useNavigate } from 'react-router-dom';  // Import useNavigate
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
+import loadingif from './loading.gif';
 const AllCars = () => {
     const [cars, setCars] = useState([]);
     const [carImages, setCarImages] = useState({});
@@ -57,10 +57,15 @@ const AllCars = () => {
             setCarImages(imagesData);
         };
 
-        fetchCars();  
-    }, [searchKeyword]);  
+        fetchCars();
+    }, [searchKeyword]);
 
-    if (loading) return <h1>Loading...</h1>;
+
+    if (loading) return <>
+        <div className='d-flex justify-content-center align-items-center mt-5'>
+            <img src={loadingif} style={{ height: '100px', width: '100px' }} alt="" />
+        </div>
+    </>;
 
     const handleCarClick = (carId) => {
         navigate(`/product/${carId}`, {

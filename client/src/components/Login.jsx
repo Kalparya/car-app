@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2"; // Import SweetAlert2
@@ -92,7 +92,7 @@ const Login = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-md-6 mb-2">
                                         <div className="form-input rounded-buttons">
                                             <button
                                                 className="btn btn-dark text-white dark-btn-outline rounded-full"
@@ -124,6 +124,7 @@ const Login = () => {
 
                         </form>
                     </div>
+                    <p className="text-center mt-5">Note: if you face login issue while refresh page once or twice else go to '/' path</p>
                 </div>
             </div>
         </section>
