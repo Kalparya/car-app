@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Car Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+The Car Management Application allows users to manage their cars, including functionalities for creating, viewing, editing, and deleting cars. Each car entry can contain up to 10 images, a title, a description, and tags (e.g., car type, company, dealer). The application also supports user authentication, ensuring that users can only manage their own cars.
 
-## Available Scripts
+## Key Features
+- **User Authentication**: Users can register, log in, and manage their cars.
+- **Car Management**: Users can add cars with images, title, description, and tags.
+- **Search Functionality**: Users can search through their cars using keywords that match the title, description, or tags.
+- **CRUD Operations**: Users can create, view, update, and delete their car entries.
 
-In the project directory, you can run:
+## Technologies Used
+- **Frontend**: React.js
+- **Backend**: Node.js, Express.js 
+- **Database**: MongoDB 
+- **Authentication**: JWT 
+- **Cloud Deployment**: Vercel: Fronend, Backend: Render
 
-### `npm start`
+## Functionalities
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### User Authentication
+- Users can sign up and log in to the system.
+  
+### Car Management
+- **Add a Car**: Users can upload images, set a title, and provide a description and tags for their cars.
+- **View Cars**: Users can view a list of all their cars.
+- **Search Cars**: Users can search for cars by title, description, or tags.
+- **Edit Car**: Users can update the title, description, tags, or images of a car.
+- **Delete Car**: Users can delete a car from their inventory.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### API Documentation
+For detailed API documentation, please visit the following link:
+- [https://car-management-application-olt8.onrender.com/api-docs/](https://car-management-application-olt8.onrender.com/api-docs/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Live Application
 
-### `npm run build`
+You can access the live application through the following link:
+- [https://car-management-application-seven.vercel.app/](https://car-management-application-seven.vercel.app/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+1. Node.js
+2. MongoDB (or your chosen database)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
