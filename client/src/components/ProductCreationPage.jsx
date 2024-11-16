@@ -34,7 +34,7 @@ const ProductCreationPage = () => {
         data.append("images", images[i]);
       }
 
-      const response = await axios.post("http://localhost:9000/cars/", data, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/cars/`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: localStorage.getItem("authToken"),

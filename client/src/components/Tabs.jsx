@@ -4,8 +4,6 @@ import ProductCreationPage from './ProductCreationPage';
 
 const Tabs = () => {
     const [activeTab, setActiveTab] = useState(0); // Default to first tab (All Cars)
-    const user = JSON.parse(localStorage.getItem('user'));
-    const isLoggedIn = user ? true : false;
 
     // Tab titles and components
     const tabs = [
@@ -17,7 +15,7 @@ const Tabs = () => {
         {
             id: 1,
             title: '+ Add New Car',
-            component: isLoggedIn ? <ProductCreationPage /> : <div>Please log in to create a product.</div>
+            component: <ProductCreationPage />
         }
     ];
 

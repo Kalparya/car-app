@@ -21,7 +21,7 @@ const SignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:9000/users/signup", formData);
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/signup`, formData);
             if (response.status === 201) {
                 toast.success("Signup successful! Please login.", { position: "top-center" });
                 navigate("/login");
@@ -33,7 +33,7 @@ const SignUp = () => {
             );
         }
     };
-    
+
 
     return (
         <section className="signin-area signin-one">

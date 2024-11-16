@@ -105,7 +105,7 @@ const ProductDetail = () => {
         }
       }
 
-      await axios.put(`http://localhost:9000/cars/${passedCarId}`, updateData, {
+      await axios.put(`${process.env.REACT_APP_API_URL}/cars/${passedCarId}`, updateData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': localStorage.getItem('authToken'),
@@ -136,12 +136,18 @@ const ProductDetail = () => {
 
   const handleDeleteCar = async () => {
     try {
-      await axios.delete(`http://localhost:9000/cars/${passedCarId}`, {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/cars/${passedCarId}`, {
         headers: {
           'Authorization': localStorage.getItem('authToken')
         }
       });
-      alert('Car deleted successfully');
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Car deleted successfully',
+        text: 'The car details have been updated successfully.',
+        confirmButtonText: 'OK',
+      });
       navigate('/'); // Redirect to the list of cars after deletion
     } catch (error) {
       console.error('Error deleting car:', error);
@@ -181,7 +187,7 @@ const ProductDetail = () => {
             )}
           </div>
 
-          <div className="col-lg-6 col-md-6 col-sm-10 col-xs-10">
+          <div className="col-lg-6 col-md-6 col-sm-10 col-xs-10 mt-3">
             <h3>Model Name: {car.title}</h3>
             <p>Model Description: {car.description}</p>
             <p>

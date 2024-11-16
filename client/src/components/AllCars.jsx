@@ -15,7 +15,7 @@ const AllCars = () => {
         console.log("token", localStorage.getItem('authToken'));
         const fetchCars = async () => {
             try {
-                const response = await axios.get('http://localhost:9000/cars', {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/cars`, {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': localStorage.getItem('authToken')
@@ -38,7 +38,7 @@ const AllCars = () => {
                 const carImagesForCar = await Promise.all(
                     car.images.map(async (imageId) => {
                         try {
-                            const imageResponse = await axios.get(`http://localhost:9000/get-image/${imageId}`, {
+                            const imageResponse = await axios.get(`${process.env.REACT_APP_API_URL}/get-image/${imageId}`, {
                                 headers: {
                                     'Content-Type': 'application/json',
                                     'Authorization': localStorage.getItem('authToken')
@@ -57,15 +57,14 @@ const AllCars = () => {
             setCarImages(imagesData);
         };
 
-        fetchCars();  // Fetch cars whenever the component mounts or when the search keyword changes
-    }, [searchKeyword]);  // Dependency array to refetch cars when the search keyword changes
+        fetchCars();  
+    }, [searchKeyword]);  
 
     if (loading) return <h1>Loading...</h1>;
 
-    // Navigate to the product detail page
     const handleCarClick = (carId) => {
         navigate(`/product/${carId}`, {
-            state: { carId }   // Correct way to pass state as an object
+            state: { carId }
         });
     };
 
