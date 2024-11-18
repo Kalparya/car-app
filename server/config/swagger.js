@@ -10,7 +10,7 @@ const swaggerDefinition = {
     },
     servers: [
         {
-            url: "http://localhost:9000", // Your server URL
+            url: "https://car-management-application-olt8.onrender.com", // Your server URL
             description: "Development server",
         },
     ],
