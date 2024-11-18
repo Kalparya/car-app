@@ -119,7 +119,7 @@ const AllCars = () => {
                                             <img
                                                 src={imageUrl}
                                                 alt={index + 1}
-                                                style={{ width: '100%', height: '100%', borderRadius: '5px' }}
+                                                style={{ width: '100%', height: '200px', borderRadius: '5px', objectFit: 'cover' }}
                                                 loading="lazy"
                                             />
                                         </div>

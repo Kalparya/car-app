@@ -35,11 +35,13 @@ const Login = () => {
                 // Store token in localStorage
                 localStorage.setItem("authToken", response.data.token);
                 localStorage.setItem("user", JSON.stringify(response.data.user));
-                Swal.fire({
+                await Swal.fire({
                     icon: "success",
                     title: "Login Successful",
                 });
                 navigate("/");
+                window.location.href = "/";
+
             }
         } catch (error) {
             console.error("Error during login:", error);
